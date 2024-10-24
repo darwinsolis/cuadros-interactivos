@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuadrados Interactivos</title>
+    <style>
+        .cuadro {
+            border: 3px solid #000;
+            margin: 20px;
+            padding: 60px;
+            display: inline-block;
+            background-color: rgb(255, 237, 179);
+        }
+        .mensaje {
+            display: none;
+            margin-top: 10px;
+            color: rgb(7, 7, 7);
+            justify-content: center;
+            font-family: Arial, Helvetica, sans-serif;
+            
+        }
+        .boton{
+            color:beige
+        }
+    </style>
+</head>
+<body>
+
+<div class="cuadro" id="cuadro">
+    <h3>INNERHTML</h3>
+    <button onclick="mostrarMensaje('mensaje1')">Mostrar info</button>
+    <div id="mensaje1" class="mensaje"> Devuelve o establece la sintaxis HTML
+         describiendo los descendientes del elemento</div>
+</div>
+
+<div class="cuadro" id="cuadro2">
+    <h3>GetElementsByTagName</h3>
+    <button onclick="mostrarMensaje('mensaje2')">Mostrar info</button>
+    <div id="mensaje2" class="mensaje">Obtiene una lista de elementos por su etiqueta</div>
+</div>
+
+<div class="cuadro" id="cuadro3">
+    <h3>OuterHTML</h3>
+    <button onclick="mostrarMensaje('mensaje3')">Mostrar info</button>
+    <div id="mensaje3" class="mensaje">Permite  obtener o establecer el contenido HTML complto de un elemento,
+        incluyendo el propio elemento.</div>
+</div>
+
+<div class="cuadro" id="cuadro4">
+    <h3>querySelectorAll</h3>
+    <button onclick="mostrarMensaje('mensaje4')">Mostrar info</button>
+    <div id="mensaje4" class="mensaje">Obtiene una lista de todos los elementos que coinciden con el selector CSS especifico</div>
+</div>
+
+<script>
+    function mostrarMensaje(mensajeId) {
+        const mensaje = document.getElementById(mensajeId);
+        mensaje.style.display = 'block'; // Muestra el mensaje
+    }
+
+    function ocultarMensajes() {
+        const mensajes = document.querySelectorAll('.mensaje');
+        mensajes.forEach(m => m.style.display = 'none'); //oculta la info
+    }
+</script>
+
+</body>
+</html>
